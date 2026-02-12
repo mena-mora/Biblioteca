@@ -1,23 +1,6 @@
-    <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biblioteca | Inicio</title>
-
-  <!-- Tailwind CSS (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    /* Drawer anim (vanilla) */
-    .drawer-enter { transform: translateX(-100%); }
-    .drawer-enter-active { transform: translateX(0); transition: transform .25s ease; }
-    .drawer-exit { transform: translateX(0); }
-    .drawer-exit-active { transform: translateX(-100%); transition: transform .25s ease; }
-  </style>
-</head>
-
-<body class="min-h-screen bg-slate-50 text-slate-800">
+@extends('layout.app')
+@section('title', 'Bienvenido a Biblioteca')
+@section('content')
   <div class="min-h-screen flex flex-col">
 
     <!-- HEADER -->
@@ -560,5 +543,4 @@
     // Año footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-</body>
-</html>
+@endsection
