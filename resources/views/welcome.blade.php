@@ -52,14 +52,14 @@
 
           <!-- Right actions -->
           <div class="flex items-center gap-2">
-            <a href="#login"
+            <a href="/login"
                class="hidden sm:inline-flex px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
               Login
             </a>
-            <a href="#login"
+            <!--<a href=""
                class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400">
               Entrar
-            </a>
+            </a>-->
           </div>
         </div>
       </div>
@@ -313,66 +313,7 @@
         </div>
       </section>
 
-      <!-- LOGIN (anchor) -->
-      <section id="login" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div class="rounded-3xl bg-white border border-slate-200 shadow-sm overflow-hidden">
-          <div class="grid grid-cols-1 lg:grid-cols-2">
-            <div class="p-6 sm:p-8">
-              <h2 class="text-2xl font-extrabold text-slate-900">Login</h2>
-              <p class="mt-2 text-sm text-slate-600">Accede para reservar libros y ver tus préstamos.</p>
-
-              <form class="mt-6 space-y-4" action="#" method="post">
-                <div>
-                  <label for="email" class="block text-sm font-medium text-slate-700">Correo</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="tucorreo@ejemplo.com"
-                    class="mt-1 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                  />
-                </div>
-
-                <div>
-                  <label for="password" class="block text-sm font-medium text-slate-700">Contraseña</label>
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="••••••••"
-                    class="mt-1 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                  />
-                </div>
-
-                <button
-                  type="button"
-                  class="w-full px-4 py-3 rounded-2xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-lg shadow-indigo-600/20"
-                >
-                  Iniciar sesión
-                </button>
-
-                <p class="text-xs text-slate-500">
-                  * Solo interfaz (demo), sin backend.
-                </p>
-              </form>
-            </div>
-
-            <div class="relative">
-              <img
-                src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1400&q=70"
-                alt="Persona leyendo en mesa de estudio"
-                class="h-full w-full object-cover"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-gradient-to-tr from-slate-950/60 to-transparent"></div>
-              <div class="absolute bottom-0 left-0 p-6 sm:p-8 text-white">
-                <p class="text-sm font-semibold">Tu historial, siempre</p>
-                <p class="text-xs text-white/80 mt-1">Reservas • Préstamos • Fechas límite</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </main>
 
     <!-- FOOTER -->

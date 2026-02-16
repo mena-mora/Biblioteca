@@ -2,11 +2,28 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoriasController;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [AuthController::class, 'loginform'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home'); 
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+// Aquí puedes agregar rutas que requieran autenticación
+    // Por ejemplo:
+    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/categorias', [CategoriasController::class, 'index'])->name('categorias.index');
+});
+

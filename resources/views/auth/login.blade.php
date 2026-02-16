@@ -20,7 +20,7 @@
         <!-- Desktop nav -->
         <nav class="hidden md:flex items-center gap-6">
           <a href="#inicio" class="text-gray-700 hover:text-indigo-600">Inicio</a>
-          <a href="#login" class="px-4 py-2 rounded-md border border-indigo-600 text-indigo-600 hover:bg-indigo-50">Login</a>
+          <a href="/" class="px-4 py-2 rounded-md border border-indigo-600 text-indigo-600 hover:bg-indigo-50">Login</a>
         </nav>
 
         <!-- Mobile hamburger -->
@@ -56,15 +56,22 @@
           <h2 class="text-2xl font-bold text-gray-800 text-center">Iniciar sesión</h2>
           <p class="text-sm text-gray-500 text-center mt-1">Accede a la biblioteca</p>
 
-          <form class="mt-8 space-y-5">
+          <form class="mt-8 space-y-5" method="POST" action="{{ route('login') }}">
+            @csrf
             <div>
               <label class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-              <input type="email" required placeholder="correo@ejemplo.com" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-blue-500" />
+              <input type="email" name="email" value="{{ old('email') }}" required placeholder="correo@ejemplo.com" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-blue-500 @error('email') border-red-500 @enderror" />
+              @error('email')
+                <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+              @enderror
             </div>
 
             <div>
               <label class="block text-sm font-medium text-gray-700">Contraseña</label>
-              <input type="password" required placeholder="••••••••" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-blue-500" />
+              <input type="password" name="password" required placeholder="••••••••" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-blue-500 @error('password') border-red-500 @enderror" />
+              @error('password')
+                <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+              @enderror
             </div>
 
             <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">Entrar</button>

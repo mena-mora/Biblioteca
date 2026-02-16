@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function login (){
+    public function loginform (){
         return view('auth.login');
     }   
 
@@ -23,13 +23,41 @@ class AuthController extends Controller
         ]);
     
 
-    $user = User::create([
-        'name' => $validate['name'],
-        'email' => $validate['email'],
-        'password' => Hash::make($validate['password']),
-    ]);
+        $user = User::create([
+            'name' => $validate['name'],
+            'email' => $validate['email'],
+            'password' => Hash::make($validate['password']),
+        ]);
 
-    Auth::login($user);
-    return redirect('/')->with('success', 'Registro exitoso. ¡Bienvenido a la biblioteca!');
-}
+        Auth::login($user);
+        return redirect('/home')->with('success', 'Registro exitoso. ¡Bienvenido a la biblioteca!');
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+
+        if(auth()->attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect('/home')->with('success', '¡Bienvenido de nuevo!');
+        }
+
+        return back()->withErrors([
+            'email' => 'Las credenciales no son correctas',
+        ])->onlyInput('email');
+
+    }
+
+    public function logout(Request $request)
+    {
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login')->with('success', 'Has cerrado sesión exitosamente.');
+    }
+
+
 }
