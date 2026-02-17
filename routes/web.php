@@ -25,5 +25,7 @@ Route::middleware('auth')->group(function () {
     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/categorias', [CategoriasController::class, 'index'])->name('categorias.index');
+route::get('/categorias/create', [CategoriasController::class, 'create'])->name('categorias.create');
+route::post('/categorias', [CategoriasController::class, 'store'])->name('categorias.store');
 });
 
