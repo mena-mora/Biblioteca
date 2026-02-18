@@ -52,14 +52,10 @@
 
           <!-- Right actions -->
           <div class="flex items-center gap-2">
-            <a href="/login"
+            <a href="{{ route('login') }}"
                class="hidden sm:inline-flex px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
               Login
             </a>
-            <!--<a href=""
-               class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400">
-              Entrar
-            </a>-->
           </div>
         </div>
       </div>
@@ -103,7 +99,7 @@
               </p>
 
               <div class="mt-7 flex flex-col sm:flex-row gap-3">
-                <a href="#login"
+                <a href="{{ route('login') }}"
                    class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-lg shadow-indigo-600/20">
                   Iniciar sesión
                 </a>
@@ -174,21 +170,6 @@
                       </div>
                     </article>
                   </div>
-
-                  <div class="mt-5 rounded-2xl bg-indigo-50 border border-indigo-100 p-4">
-                    <p class="text-sm font-semibold text-indigo-900">Acción rápida</p>
-                    <p class="text-xs text-indigo-800/80 mt-1">
-                      Inicia sesión para reservar y administrar tus préstamos.
-                    </p>
-                    <a href="#login"
-                       class="mt-3 inline-flex w-full items-center justify-center px-4 py-2 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800">
-                      Entrar
-                    </a>
-                  </div>
-
-                  <p class="mt-3 text-[11px] text-slate-500">
-                    Imágenes: Unsplash (uso libre).
-                  </p>
                 </div>
               </div>
             </div>

@@ -31,4 +31,26 @@ class CategoriasController extends Controller
         return redirect()->route('categorias.index')->with('success', 'Categoría creada exitosamente.');
     }
 
+    public function edit($id){
+        $categorias = Categoria::findOrFail($id);
+        return view('categorias.edit', compact('categorias'));
+    }
+
+    public function update(Request $request, $id){
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+        ]);
+
+        $categoria = Categoria::findOrFail($id);
+        $categoria->nombre = $request->nombre;
+        $categoria->save();
+        return redirect()->route('categorias.index')->with('success', 'Categoría actualizada exitosamente.');
+    }
+
+    public function destroy($id){
+        $categoria = Categoria::findOrFail($id);
+        $categoria->delete();
+        return redirect()->route('categorias.index')->with('success', 'Categoría eliminada exitosamente.');
+    }
+
 }
