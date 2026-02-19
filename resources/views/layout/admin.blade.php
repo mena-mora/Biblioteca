@@ -32,7 +32,7 @@
         <nav class="hidden md:block">
           <ul class="flex space-x-8 items-center">
             <li>
-              <a href="#inicio" class="text-gray-700 font-medium hover:text-blue-600 transition-all">
+              <a href="{{ route('home') }}" class="text-gray-700 font-medium hover:text-blue-600 transition-all">
                 <i class="fas fa-home mr-2"></i>Inicio
               </a>
             </li>
@@ -93,9 +93,15 @@
         <nav class="p-4">
           <ul class="space-y-2">
             <li>
-              <a href="#inicio"
+              <a href="{{ route('home') }}"
                 class="flex items-center p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-xl transition-all font-medium hover-lift">
                 <i class="fas fa-home w-6 mr-3"></i> Inicio
+              </a>
+            </li>
+            <li>
+              <a href="#libros"
+                class="flex items-center p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-xl transition-all font-medium hover-lift">
+                <i class="fas fa-book w-6 mr-3"></i> Usuarios
               </a>
             </li>
             <li>

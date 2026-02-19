@@ -19,7 +19,7 @@ Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard'
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home'); 
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Aquí puedes agregar rutas que requieran autenticación
     // Por ejemplo:
     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
