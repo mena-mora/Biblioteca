@@ -24,11 +24,11 @@
             </button>
 
             <a href="#inicio" class="flex items-center gap-2">
-              <div class="h-10 w-10 rounded-2xl bg-indigo-600 grid place-items-center text-white font-extrabold shadow-sm">
-                B
+              <div class="h-30 w-30 rounded-2xl  grid place-items-center text-white ">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo de la Biblioteca" class="h-full w-full object-contain">
               </div>
               <div class="leading-tight">
-                <p class="font-semibold text-slate-900">Biblioteca</p>
+                <p class="font-semibold text-slate-700">Biblioteca</p>
                 <p class="text-xs text-slate-500 -mt-0.5">Lee • Reserva • Aprende</p>
               </div>
             </a>
@@ -37,7 +37,7 @@
           <!-- Desktop nav -->
           <nav class="hidden md:flex items-center gap-1" aria-label="Menú principal">
             <a href="#inicio"
-               class="px-4 py-2 rounded-xl text-sm font-medium bg-indigo-50 text-indigo-700 hover:bg-indigo-100">
+               class="px-4 py-2 rounded-xl text-sm font-medium bg-indigo-50 text-cyan-700 hover:bg-indigo-100">
               Inicio
             </a>
             <a href="#catalogo"
@@ -53,7 +53,7 @@
           <!-- Right actions -->
           <div class="flex items-center gap-2">
             <a href="{{ route('login') }}"
-               class="hidden sm:inline-flex px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
+               class="hidden sm:inline-flex px-4 py-2 rounded-xl text-sm font-semibold text-cyan-700 hover:bg-slate-100">
               Login
             </a>
           </div>
@@ -76,7 +76,7 @@
           <div class="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-slate-950/55 to-slate-950/75"></div>
 
           <!-- Decorative blobs -->
-          <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-indigo-500/25 blur-3xl"></div>
+          <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-cyan-500/25 blur-3xl"></div>
           <div class="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl"></div>
         </div>
 
@@ -100,7 +100,7 @@
 
               <div class="mt-7 flex flex-col sm:flex-row gap-3">
                 <a href="{{ route('login') }}"
-                   class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-lg shadow-indigo-600/20">
+                   class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-cyan-600 text-white font-semibold hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-lg shadow-indigo-600/20">
                   Iniciar sesión
                 </a>
                 <a href="#catalogo"
@@ -258,7 +258,7 @@
 
           <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <div class="h-11 w-11 rounded-2xl bg-indigo-600 text-white grid place-items-center">
+              <div class="h-11 w-11 rounded-2xl bg-cyan-600 text-white grid place-items-center">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M6 4h10a2 2 0 0 1 2 2v14l-3-2-3 2-3-2-3 2V6a2 2 0 0 1 2-2Z"
                     stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -302,7 +302,7 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div class="flex items-center gap-2">
-            <div class="h-10 w-10 rounded-2xl bg-indigo-600 grid place-items-center text-white font-extrabold">B</div>
+            <div class="h-10 w-10 rounded-2xl bg-cyan-600 grid place-items-center text-white font-extrabold">B</div>
             <div>
               <p class="text-sm font-semibold text-slate-900">Biblioteca</p>
               <p class="text-xs text-slate-500">Hecha con HTML + Tailwind + JS Vanilla</p>
@@ -358,7 +358,7 @@
 
         <nav class="p-2 space-y-1" aria-label="Navegación móvil">
           <a href="#inicio"
-             class="flex items-center gap-3 px-4 py-3 rounded-xl bg-indigo-50 text-indigo-700 font-medium hover:bg-indigo-100">
+             class="flex items-center gap-3 px-4 py-3 rounded-xl bg-indigo-50 text-cyan-700 font-medium hover:bg-indigo-100">
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-7H10v7H5a1 1 0 0 1-1-1v-9.5Z"
                 stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
