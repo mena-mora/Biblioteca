@@ -38,7 +38,7 @@
 
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
                 <p class="text-xs text-slate-500 uppercase tracking-wider">Libros</p>
-                <p class="text-2xl font-bold mt-1">2,340</p>
+                <p class="text-2xl font-bold mt-1">{{$totalLibros}}</p>
                 <p class="text-sm text-slate-500 mt-2">Catálogo total</p>
               </article>
 

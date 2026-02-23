@@ -9,9 +9,12 @@ use App\Models\Libro;
 class HomeController extends Controller
 {
     //
+
     public function index(\Illuminate\Http\Request $request) {
         $q = $request->input('search');
         $qLower = $q ? mb_strtolower($q) : null;
+
+        $totalLibros = Libro::count();
 
         $libros = Libro::with('categoria')
             ->when($qLower, function ($query, $qLower) {
@@ -41,7 +44,7 @@ class HomeController extends Controller
             }));
         }
 
-        return view('home.index', compact('libros'));
+        return view('home.index', compact('libros', 'totalLibros'));
     }
 
     public function about() {

@@ -64,7 +64,7 @@
             @csrf
             <div>
               <label class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-              <input type="email" name="email" value="{{ old('email') }}" required placeholder="correo@ejemplo.com" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-blue-500 @error('email') border-red-500 @enderror" />
+              <input type="email" name="email" value="{{ old('email') }}" required placeholder="correo@ejemplo.com" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-blue-500 @error('email') @enderror" />
               @error('email')
                 <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
               @enderror
@@ -72,7 +72,7 @@
 
             <div>
               <label class="block text-sm font-medium text-gray-700">Contraseña</label>
-              <input type="password" name="password" required placeholder="••••••••" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 focus:border-cyan-500 focus:ring-cyan-500 @error('password') border-red-500 @enderror" />
+              <input type="password" name="password" required placeholder="••••••••" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 focus:border-cyan-500 focus:ring-cyan-500 @error('password') @enderror" />
               @error('password')
                 <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
               @enderror

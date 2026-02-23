@@ -73,7 +73,7 @@
             class="h-full w-full object-cover"
             loading="lazy"
           />
-          <div class="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-slate-950/55 to-slate-950/75"></div>
+          <div class="absolute inset-0 bg-linear-to-b from-slate-950/75 via-slate-950/55 to-slate-950/75"></div>
 
           <!-- Decorative blobs -->
           <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-cyan-500/25 blur-3xl"></div>
@@ -203,7 +203,7 @@
                 class="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/40 to-transparent"></div>
               <p class="absolute bottom-3 left-3 text-white text-sm font-semibold">Literatura</p>
             </div>
             <div class="p-5">
@@ -219,7 +219,7 @@
                 class="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/40 to-transparent"></div>
               <p class="absolute bottom-3 left-3 text-white text-sm font-semibold">Tecnología</p>
             </div>
             <div class="p-5">
@@ -235,7 +235,7 @@
                 class="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/40 to-transparent"></div>
               <p class="absolute bottom-3 left-3 text-white text-sm font-semibold">Educación</p>
             </div>
             <div class="p-5">
