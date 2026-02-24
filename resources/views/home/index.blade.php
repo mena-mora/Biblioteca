@@ -144,6 +144,42 @@
                   @endforeach
                 </tbody>
                 </table>
+                <!-- paginación -->
+                <div class="flex items-center justify-between px-5 py-4 border-t border-slate-200 bg-white">
+                  <p class="text-sm text-slate-600">
+                    Mostrando <span class="font-medium">1</span> a <span class="font-medium">6</span> de
+                    <span class="font-medium">24</span> Resultados
+                  </p>
+                  <div class="flex items-center gap-1">
+
+                    <button
+                      class="px-3 py-1.5 text-sm rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
+                      Anterior
+                    </button>
+
+                    <button
+                      class="px-3 py-1.5 text-sm rounded-md bg-slate-800 text-white">
+                      1
+                    </button>
+
+                    <button
+                      class="px-3 py-1.5 text-sm rounded-md border border-slate-300 text-slate-700 hover:bg-slate-100 transition">
+                      2
+                    </button>
+
+                    <button
+                      class="px-3 py-1.5 text-sm rounded-md border border-slate-300 text-slate-700 hover:bg-slate-100 transition">
+                      3
+                    </button>
+
+                   
+                    <button
+                      class="px-3 py-1.5 text-sm rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
+                      Siguiente
+                    </button>
+                  </div>
+
+                </div>
               </div>
             </section>
             
