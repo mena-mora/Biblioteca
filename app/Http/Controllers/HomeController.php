@@ -13,10 +13,10 @@ class HomeController extends Controller
     public function index(\Illuminate\Http\Request $request) {
         $q = $request->input('search');
         $qLower = $q ? mb_strtolower($q) : null;
-
         $totalLibros = Libro::count();
+        // Obtener el total de libros para mostrar en la vista
 
-        $libros = Libro::with('categoria')
+        $librosQuery = Libro::with('categoria')
             ->when($qLower, function ($query, $qLower) {
                 $query->where(function ($sub) use ($qLower) {
                     $sub->whereRaw('LOWER(titulo) LIKE ?', ["%{$qLower}%"])
@@ -28,11 +28,12 @@ class HomeController extends Controller
                         });
                 });
             })
-            ->orderBy('created_at', 'desc')
-            ->get();
+            ->orderBy('created_at', 'desc');
 
-        if ($request->wantsJson() || $request->ajax()) {
-            return response()->json($libros->map(function ($l) {
+                    $paginated = $librosQuery->paginate(5)->withQueryString();
+
+         if ($request->wantsJson() || $request->ajax()) {
+            $items = collect($paginated->items())->map(function ($l) {
                 return [
                     'id' => $l->id,
                     'titulo' => $l->titulo,
@@ -41,15 +42,23 @@ class HomeController extends Controller
                     'editorial' => $l->editorial,
                     'isbn' => $l->isbn,
                 ];
-            }));
-        }
+            })->values();
 
-        return view('home.index', compact('libros', 'totalLibros'));
+            return response()->json([
+                'items' => $items,
+                'pagination' => (string) $paginated->links(),
+            ]);
+        }
+        
+       
+        $libros = $paginated;
+        return view('home.index', compact('libros','totalLibros'));
     }
 
     public function about() {
         return view('home.dashboard');
     }
+
 
     
     

@@ -14,8 +14,7 @@ class LibrosController extends Controller
     {
         $q = $request->input('search');
         $qLower = $q ? mb_strtolower($q) : null;
-
-        $libros = Libro::with('categoria')
+        $librosQuery = Libro::with('categoria')
             ->when($qLower, function ($query, $qLower) {
                 $query->where(function ($sub) use ($qLower) {
                     $sub->whereRaw('LOWER(titulo) LIKE ?', ["%{$qLower}%"])
@@ -26,11 +25,12 @@ class LibrosController extends Controller
                             $cq->whereRaw('LOWER(nombre) LIKE ?', ["%{$qLower}%"]);
                         });
                 });
-            })
-            ->get();
+            });
+
+        $paginated = $librosQuery->paginate(5)->withQueryString();
 
         if ($request->wantsJson() || $request->ajax()) {
-            return response()->json($libros->map(function ($l) {
+            $items = collect($paginated->items())->map(function ($l) {
                 return [
                     'id' => $l->id,
                     'titulo' => $l->titulo,
@@ -39,9 +39,15 @@ class LibrosController extends Controller
                     'editorial' => $l->editorial,
                     'isbn' => $l->isbn,
                 ];
-            }));
+            })->values();
+
+            return response()->json([
+                'items' => $items,
+                'pagination' => (string) $paginated->links(),
+            ]);
         }
 
+        $libros = $paginated;
         return view('libros.index', compact('libros'));
     }
 

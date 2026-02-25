@@ -99,6 +99,7 @@
                 @endforeach
                 </tbody>
             </table>
+            <div id="pagination">{{ $libros->links() }}</div>
         </div>
     </section>
     <script>
@@ -156,7 +157,10 @@
                         if (!res.ok) throw new Error('Network response was not ok');
                         return res.json();
                     }).then(function (data) {
-                        renderRows(data);
+                        // data: { items: [...], pagination: '<nav>...</nav>' }
+                        renderRows(data.items || []);
+                        var pag = document.getElementById('pagination');
+                        if (pag) pag.innerHTML = data.pagination || '';
                     }).catch(function (err) {
                         console.error('Search error:', err);
                     });
