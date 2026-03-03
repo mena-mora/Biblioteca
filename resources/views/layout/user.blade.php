@@ -38,10 +38,7 @@
               </a>
             </li>
             <li>
-            <a href="{{ route('usuarios.index') }}" class="text-gray-700 font-medium hover:text-cyan-600 transition-all">
-                <i class="fas fa-users mr-2"></i>Usuarios
-              </a>
-            </li>
+        
             <li>
               <a href="#prestamos" class="text-gray-700 font-medium hover:text-cyan-600 transition-all">
                 <i class="fas fa-exchange-alt mr-2"></i>Préstamos
@@ -63,10 +60,12 @@
 
         <!-- Usuario -->
         <div class="hidden md:flex items-center space-x-3">
-          <div class="w-9 h-9 rounded-full bg-cyan-100 flex items-center justify-center">
-            <i class="fas fa-user text-cyan-700"></i>
+          <div class="w-9 h-9 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-950">
+            <i class="fas fa-user text-cyan-700">{{ substr(auth()->user()->name, 0, 1) }}</i>
+            {{-- <i class="fas fa-user text-cyan-700">{{ substr(auth()->user()->name, 0, 1) }}</i> --}}
           </div>
-          <span class="font-medium text-cyan-900">Administrador</span>
+          <span class="font-medium text-cyan-900">{{ auth()->user()->name }}</span> 
+          <span class="text-sm text-gray-500">{{ auth()->user()->email }}</span>
         </div>
       </div>
     </div>
@@ -100,17 +99,6 @@
               </a>
             </li>
             <li>
-              <a href="{{ route('usuarios.index') }}"
-                class="flex items-center p-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 rounded-xl transition-all font-medium hover-lift">
-                <i class="fas fa-users w-6 mr-3"></i> Usuarios
-              </a>
-            </li>
-            <li>
-              <a href="{{ route('categorias.index') }}"
-                class="flex items-center p-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 rounded-xl transition-all font-medium hover-lift">
-                <i class="fas fa-tags w-6 mr-3"></i> Categorías
-              </a>
-            </li>
             <li>
               <a href="{{ route('libros.index') }}"
                 class="flex items-center p-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 rounded-xl transition-all font-medium hover-lift">

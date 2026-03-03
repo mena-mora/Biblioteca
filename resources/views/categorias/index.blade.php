@@ -11,9 +11,10 @@
         </div>
     @endif
     
-        <a href="{{ route('categorias.create') }}" class="bg-blue-700  text-white px-4 py-2 rounded-lg font-medium transition-all glow mb-4 inline-block">
-        <i class="fas fa-plus mr-2"></i>+ Agregar Categoria
-    </a>
+        <a href="{{ route('categorias.create') }}" 
+            class="bg-blue-700  text-white px-4 py-2 rounded-lg font-medium transition-all glow mb-4 inline-block">
+            <i class="fas fa-plus mr-2"></i>+ Agregar Categoria
+        </a>
 
     <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
     <table class="min-w-full text-sm">
@@ -52,7 +53,6 @@
                                 </button>
                             </form>
 
-                            <!-- Eliminar -->
                             <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')

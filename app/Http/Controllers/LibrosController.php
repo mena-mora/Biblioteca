@@ -9,7 +9,6 @@ use App\Models\Libro;
 
 class LibrosController extends Controller
 {
-
     public function index(\Illuminate\Http\Request $request)
     {
         $q = $request->input('search');

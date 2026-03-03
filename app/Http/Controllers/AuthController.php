@@ -27,6 +27,7 @@ class AuthController extends Controller
             'name' => $validate['name'],
             'email' => $validate['email'],
             'password' => Hash::make($validate['password']),
+            //'user_type' => 'lector'
         ]);
 
         Auth::login($user);

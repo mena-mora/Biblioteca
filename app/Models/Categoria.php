@@ -18,5 +18,5 @@ class Categoria extends Model
         return $this->hasMany(Libro::class, 'categoria_id');
 
     
-}
+    }
 }

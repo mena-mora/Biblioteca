@@ -11,6 +11,9 @@ class HomeController extends Controller
     //
 
     public function index(\Illuminate\Http\Request $request) {
+    $user = auth()->user();
+    if ($user->user_type === 'admin') {
+
         $q = $request->input('search');
         $qLower = $q ? mb_strtolower($q) : null;
         $totalLibros = Libro::count();
@@ -53,14 +56,18 @@ class HomeController extends Controller
        
         $libros = $paginated;
         return view('home.index', compact('libros','totalLibros'));
+
+    } else if ($user->user_type === 'lector') {
+        return view('home.index_user');
+    } else {
+        return view('home.index_user');
+    } 
+
     }
 
     public function about() {
         return view('home.dashboard');
     }
-
-
-    
     
 }
 
