@@ -27,7 +27,7 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <label for="password_confirmation" class="block text-gray-700 font-medium mb-2">Validar Contraseña del usuario:</label>
+                <label for="passwormation" class="block text-gray-700 font-medium mb-2">Validar Contraseña del usuario:</label>
                 <input type="password" name="password_confirmation" id="password_confirmation" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300" required>
                 @error('password_confirmation')
                     <p class="text-red-500 text-sm">{{ $message }}</p>
