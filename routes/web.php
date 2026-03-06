@@ -42,6 +42,13 @@ Route::middleware(['auth', 'userType:admin'])->group(function () {
     Route::delete('/libros/{id}', [LibrosController::class, 'destroy'])->name('libros.destroy'); 
 
     Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios.index');
+    route::get('/usuarios/create', [UsuariosController::class, 'create'])->name('usuarios.create');
+    route::post('/usuarios', [UsuariosController::class, 'store'])->name('usuarios.store');
+    
+    Route::get('/usuarios/{id}/edit',[UsuariosController::class, 'edit'])->name('usuarios.edit');
+    Route::put('/usuarios/{id}',[UsuariosController::class, 'update'])->name('usuarios.update');
+
+    Route::delete('/usuarios/{id}',[UsuariosController::class, 'destroy'])->name('usuarios.destroy');
 });
 
 Route::middleware(['auth', 'userType:user'])->group(function () {
