@@ -140,9 +140,10 @@
                     </tr>
                   @endforeach
                 </tbody>
+                
                 </table>
                 <!-- paginación  -->
-                {{ $libros->links() }}
+                <div id="pagination">{{ $libros->links() }}</div>
                 <!--<div class="flex items-center justify-between px-5 py-4 border-t border-slate-200 bg-white">
                   <p class="text-sm text-slate-600">
                     Mostrando <span class="font-medium">1</span> a <span class="font-medium">6</span> de
@@ -243,7 +244,9 @@
                   if (!res.ok) throw new Error('Network response was not ok');
                   return res.json();
                 }).then(function (data) {
-                  renderRows(data);
+                  renderRows(data.items || []);
+                  const pag = document.getElementById('pagination');
+                  if (pag) pag.innerHTML = data.pagination || '';
                 }).catch(function (err) {
                   console.error('Search error:', err);
                 });

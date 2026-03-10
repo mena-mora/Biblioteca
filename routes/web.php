@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LibrosController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\PrestamosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -50,6 +51,9 @@ Route::middleware(['auth', 'userType:admin'])->group(function () {
 
     Route::get('/usuarios/{id}/delete_confirm',[UsuariosController::class, 'delete_confirm'])->name('usuarios.delete_confirm');
     Route::delete('/usuarios/{id}',[UsuariosController::class, 'destroy'])->name('usuarios.destroy');
+
+    Route::get('/prestamos', [PrestamosController::class, 'index'])->name('prestamos.index');
+
 });
 
 Route::middleware(['auth', 'userType:user'])->group(function () {

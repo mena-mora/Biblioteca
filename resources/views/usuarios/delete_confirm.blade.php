@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-        <h1>Eliminar Usuario</h1>
-        <p>¿Estás seguro de que deseas eliminar al usuario "{{ $usuario->name }}"?</p>
+        <h1 class="text-lg font-semibold text-slate-800">Eliminar Usuario</h1>
+        <p class="text-slate-600">¿Estás seguro de que deseas eliminar al usuario "{{ $usuario->name }}"?</p>
 
         <table class="min-w-full text-sm">
             <thead class="bg-slate-50 text-slate-600">
@@ -31,7 +31,11 @@
             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                 Eliminar
             </button>
+            <a href="{{ route('usuarios.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                Cancelar
+            </a>
         </form>
+        
     </div>
 
 @endsection

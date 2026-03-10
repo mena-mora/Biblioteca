@@ -33,7 +33,7 @@ class HomeController extends Controller
             })
             ->orderBy('created_at', 'desc');
 
-                    $paginated = $librosQuery->paginate(5)->withQueryString();
+            $paginated = $librosQuery->paginate(5)->withQueryString();
 
          if ($request->wantsJson() || $request->ajax()) {
             $items = collect($paginated->items())->map(function ($l) {
