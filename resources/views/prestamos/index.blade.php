@@ -33,17 +33,17 @@
                         <td class="px-6 py-4">{{ $prestamo->fecha_devolucion }}</td>
                         <td class="px-6 py-4">{{ $prestamo->estado }}</td>
                         <td class="px-6 py-4 text-right">
-                            <a href="{{ route('prestamos.edit', $prestamo->id) }}"
+                            <a href=""
                                 class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-lg font-medium transition-all glow">
                                 Editar
                             </a>
-                            <form action="{{ route('prestamos.destroy', $prestamo->id) }}" method="POST" class="inline-block">
+                            <form action="" method="POST" class="inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"
                                     class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg font-medium transition-all glow">
                                     Eliminar
-                                </button>
+                                </button>   
                             </form>
                         </td>
                     </tr>
