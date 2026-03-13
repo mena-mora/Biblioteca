@@ -60,10 +60,15 @@
                         <td class="px-5 py-4">{{ $libro->isbn }}</td>
 
                         <td class="px-5 py-4">
-                            <span
-                                class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700 font-medium">
-                                Activo
+                            @if ($libro->estatus ==0)
+                            <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700 font-medium">
+                            Activo
                             </span>
+                          @else
+                            <span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-1 text-red-700 font-medium">
+                            Inactivo
+                            </span>
+                          @endif
                         </td>
                         <td class="px-5 py-4 text-right">
                           <div class="flex justify-end gap-2">

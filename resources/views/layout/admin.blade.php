@@ -143,13 +143,13 @@
               <div class="bg-cyan-50 p-3 rounded-xl">
                 <div class="flex justify-between items-center">
                   <span class="text-sm text-gray-600">Libros activos</span>
-                  <span class="font-bold text-cyan-700">1,245</span>
+                  <span class="font-bold text-cyan-700">{{$totalLibros}}</span>
                 </div>
               </div>
               <div class="bg-green-50 p-3 rounded-xl">
                 <div class="flex justify-between items-center">
                   <span class="text-sm text-gray-600">Préstamos activos</span>
-                  <span class="font-bold text-green-700">87</span>
+                  <span class="font-bold text-green-700">{{$totalPrestamos}}</span>
                 </div>
               </div>
             </div>

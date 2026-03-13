@@ -1,9 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Home')
 @section('content')
-
-
-
           <!-- MAIN -->
           <main class="min-w-0">
             <!-- Encabezado de sección -->
@@ -41,7 +38,7 @@
 
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
                 <p class="text-xs text-slate-500 uppercase tracking-wider">Préstamos activos</p>
-                <p class="text-2xl font-bold mt-1">42</p>
+                <p class="text-2xl font-bold mt-1">{{$totalPrestamos}}</p>
                 <p class="text-sm text-amber-700 mt-2">9 por vencer</p>
               </article>
 
@@ -103,9 +100,15 @@
                         <td class="px-5 py-4">{{ $libro->isbn }}</td>
                         
                         <td class="px-5 py-4">
+                          @if ($libro->estatus ==0)
                             <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700 font-medium">
                             Activo
                             </span>
+                          @else
+                            <span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-1 text-red-700 font-medium">
+                            Inactivo
+                            </span>
+                          @endif
                         </td>
                       <td class="px-5 py-4 text-right">
                           <div class="flex justify-end gap-2">
