@@ -10,6 +10,14 @@
         </div>
     @endif
 
+    <section class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Resumen">
+              <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Usuarios</p>
+                <p class="text-2xl font-bold mt-1">128</p>
+                <p class="text-sm text-emerald-700 mt-2">Cantidad total</p>
+              </article>
+    </section>
+
     <a href="{{ route('usuarios.create') }}"
         class="bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all glow mb-4 inline-block">
         <i class="fas fa-plus mr-2"></i>+ Agregar Usuario

@@ -62,7 +62,7 @@ class PrestamosController extends Controller
             $prestamo->usuario_id = $request->input('usuario_id');
             $prestamo->libro_id = $request->input('libro_id');
             $prestamo->fecha_entrega = now();
-            $prestamo->estado = 'entregado';
+            $prestamo->estado = 'pendiente';
             $prestamo->save();
 
             $libro = Libro::findOrFail($request->input('libro_id'));
@@ -76,5 +76,26 @@ class PrestamosController extends Controller
         }
 
         return redirect()->route('prestamos.index')->with('success', 'Préstamo registrado correctamente.');
+     }
+
+     public function entregar($id){
+         \DB::beginTransaction();
+         try {
+             $prestamo = Prestamo::findOrFail($id);
+             $prestamo->estado = 'entregado';
+             $prestamo->fecha_devolucion = now();
+             $prestamo->save();
+
+             $libro = Libro::findOrFail($prestamo->libro_id);
+             $libro->estatus = 0;
+             $libro->save();
+
+             \DB::commit();
+             return redirect()->route('prestamos.index')->with('success', 'Libro entregado correctamente.');
+         } catch (\Exception $e) {
+             \DB::rollBack();
+             return redirect()->back()->with('error', 'Ocurrió un error al entregar el libro: ' . $e->getMessage());
+         }
+        
      }
 }

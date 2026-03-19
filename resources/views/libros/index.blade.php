@@ -9,6 +9,14 @@
             <span class="block sm:inline">{{ session('success') }}</span>
         </div>
     @endif
+    <section class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Resumen">
+              <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Libros</p>
+                <p class="text-2xl font-bold mt-1">128</p>
+                <p class="text-sm text-emerald-700 mt-2">Catálogo total</p>
+              </article>
+    </section>
+
     <section class="mt-6 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
         <header class="p-5 border-b border-slate-200 flex items-center justify-between gap-3">
             <div class="flex items-center gap-3">

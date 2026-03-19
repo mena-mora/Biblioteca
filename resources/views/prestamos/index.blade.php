@@ -28,6 +28,7 @@
                     <th class="text-left font-semibold px-6 py-4">Libro</th>
                     <th class="text-left font-semibold px-6 py-4">Estado</th>
                     <th class="text-left font-semibold px-6 py-4">Fecha de entrega</th>
+                    <th class="text-left font-semibold px-6 py-4">Fecha de devolucion</th>
                     <th class="text-right font-semibold px-6 py-4">Acciones</th>
                 </tr>
             </thead>
@@ -42,29 +43,27 @@
                         <td class="px-6 py-4">{{ $prestamo->id }}</td>
                         <td class="px-6 py-4">{{ $prestamo->usuario->name ?? 'Sin usuario' }}</td>
                         <td class="px-6 py-4">{{ $prestamo->libro->titulo ?? 'Sin libro' }}</td>
-                        <td class="px-6 py-4">{{ $prestamo->estado }}</td>
+                        <td class="px-6 py-4">
+                            @if ($prestamo->estado == 'pendiente')
+                                <span class="inline-flex items-center rounded-full bg-red-50 px-2.5 py-1 text-red-700 font-medium">
+                                Pendiente
+                                </span>
+                            @else
+                                <span class="inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-1 text-emerald-700 font-medium">
+                                Entregado
+                                </span>
+                            @endif
+                        </td>
                         <td class="px-6 py-4">{{ $prestamo->fecha_entrega }}</td>
-                        <td class="px-6 py-4 text-right">
-                            <button class="text-blue-600 hover:bg-blue-100 p-2 rounded-full transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" class="w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Z" />
+                        <td class="px-6 py-4">{{$prestamo->fecha_devolucion}}</td>
+                        <td class="px-6 py-4 justify-center">
+                            @if ($prestamo->estado == 'pendiente')
+                                <a href="{{ route('prestamos.entregar', $prestamo->id) }}" class="text-green-600 hover:text-green-800 font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3" />
                                     </svg>
-                                </button>
-                            <form action="" method="POST" class="inline-block">
-                                @csrf
-                                @method('DELETE')
-                                <button class="text-red-500 hover:bg-red-100 p-2 rounded-full transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" class="w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79" />
-                                    </svg>
-                                </button>
-                            </form> 
+                                </a>
+                            @endif
                             </form>
                         </td>
                     </tr>

@@ -136,24 +136,7 @@
           </ul>
 
           <!-- Stats (como tus KPI cards) -->
-          <div class="my-8 border-t border-slate-200 pt-6">
-            <h3 class="text-xs font-semibold text-gray-500 uppercase mb-3">Estadísticas rápidas</h3>
-
-            <div class="space-y-3">
-              <div class="bg-cyan-50 p-3 rounded-xl">
-                <div class="flex justify-between items-center">
-                  <span class="text-sm text-gray-600">Libros activos</span>
-                  <span class="font-bold text-cyan-700">{{$totalLibros}}</span>
-                </div>
-              </div>
-              <div class="bg-green-50 p-3 rounded-xl">
-                <div class="flex justify-between items-center">
-                  <span class="text-sm text-gray-600">Préstamos activos</span>
-                  <span class="font-bold text-green-700">{{$totalPrestamos}}</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </nav>
       </aside>
 
