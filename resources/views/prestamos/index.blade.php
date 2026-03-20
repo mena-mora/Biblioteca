@@ -19,6 +19,7 @@
         class="bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all glow mb-4 inline-block">
         <i class="fas fa-plus mr-2"></i>+ Agregar Préstamo
     </a>
+    
     <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
         <table class="min-w-full text-sm">
             <thead class="bg-slate-50 text-slate-600">

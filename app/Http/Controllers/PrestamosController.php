@@ -48,7 +48,6 @@ class PrestamosController extends Controller
         return view('prestamos.select_libro', compact('libros', 'usuario'));
      }
 
-
      public function store(Request $request){
         $request->validate([
             'usuario_id' => 'required|exists:users,id',
@@ -62,7 +61,7 @@ class PrestamosController extends Controller
             $prestamo->usuario_id = $request->input('usuario_id');
             $prestamo->libro_id = $request->input('libro_id');
             $prestamo->fecha_entrega = now();
-            $prestamo->estado = 'pendiente';
+            $prestamo->estado = 'pendiente'; 
             $prestamo->save();
 
             $libro = Libro::findOrFail($request->input('libro_id'));
