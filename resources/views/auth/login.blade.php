@@ -60,7 +60,7 @@
           <h2 class="text-2xl font-bold text-gray-800 text-center">Iniciar sesión</h2>
           <p class="text-sm text-gray-500 text-center mt-1">Accede a la biblioteca</p>
 
-          <form class="mt-8 space-y-5" method="POST" action="{{ route('login') }}">
+          <form class="mt-8 space-y-5" method="POST" action="{{ route('login.submit') }}">
             @csrf
             <div>
               <label class="block text-sm font-medium text-gray-700">Correo electrónico</label>

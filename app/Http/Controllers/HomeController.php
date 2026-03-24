@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Libro;
 use App\Models\Prestamo;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -19,6 +20,8 @@ class HomeController extends Controller
         $qLower = $q ? mb_strtolower($q) : null;
         $totalLibros = Libro::count();
         $totalPrestamos = Prestamo::where('estado', 'entregado')->count();
+        $totalPrestamosPendiendiete = Prestamo::where('estado', 'pendiente')->count();
+        $totalUsuarios = User::count();
         // Obtener el total de libros para mostrar en la vista
 
         $librosQuery = Libro::with('categoria')
@@ -57,7 +60,7 @@ class HomeController extends Controller
         
        
         $libros = $paginated;
-        return view('home.index', compact('libros','totalLibros','totalPrestamos'));
+        return view('home.index', compact('libros','totalLibros','totalPrestamos','totalUsuarios','totalPrestamosPendiendiete'));
 
     } else if ($user->user_type === 'lector') {
         return view('home.index_user');

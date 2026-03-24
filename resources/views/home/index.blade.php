@@ -26,25 +26,22 @@
             <section class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Resumen">
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
                 <p class="text-xs text-slate-500 uppercase tracking-wider">Usuarios</p>
-                <p class="text-2xl font-bold mt-1">128</p>
-                <p class="text-sm text-emerald-700 mt-2">+8 esta semana</p>
+                <p class="text-2xl font-bold mt-1">{{$totalUsuarios}}</p>
               </article>
 
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
                 <p class="text-xs text-slate-500 uppercase tracking-wider">Libros</p>
                 <p class="text-2xl font-bold mt-1">{{$totalLibros}}</p>
-                <p class="text-sm text-slate-500 mt-2">Catálogo total</p>
               </article>
 
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
                 <p class="text-xs text-slate-500 uppercase tracking-wider">Préstamos activos</p>
                 <p class="text-2xl font-bold mt-1">{{$totalPrestamos}}</p>
-                <p class="text-sm text-amber-700 mt-2">9 por vencer</p>
               </article>
 
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
-                <p class="text-xs text-slate-500 uppercase tracking-wider">Atrasos</p>
-                <p class="text-2xl font-bold mt-1">6</p>
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Préstamos pendientes</p>
+                <p class="text-2xl font-bold mt-1">{{$totalPrestamosPendiendiete}}</p>
                 <p class="text-sm text-rose-700 mt-2">Requiere atención</p>
               </article>
             </section>

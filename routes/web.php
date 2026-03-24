@@ -13,7 +13,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [AuthController::class, 'loginform'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
