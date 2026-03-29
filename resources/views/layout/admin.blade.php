@@ -47,6 +47,11 @@
                 <i class="fas fa-exchange-alt mr-2"></i>Préstamos
               </a>
             </li>
+            <li>
+              <a href="{{ route('prestamos.index') }}" class="text-gray-700 font-medium hover:text-cyan-600 transition-all">
+                <i class="fas fa-exchange-alt mr-2"></i>Perfil
+              </a>
+            </li>
 
             <!-- Logout recomendado (POST) -->
             <li class="ml-2">
