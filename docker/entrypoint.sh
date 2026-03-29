@@ -15,6 +15,7 @@ php artisan migrate --force
 # Seeders (usuario admin)
 php artisan db:seed --force
 
+
 # Cachear config
 php artisan config:clear
 php artisan config:cache

@@ -14,15 +14,14 @@ class AdminUserSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->updateOrInsert(
-            ['email' => 'admin@gmail.com'],
-            [
-                'name' => 'Administrador',
-                'email' => 'admin@gmail.com',
-                'password' => Hash::make('admin123'),
-                'user_type' => 'admin',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]
-        );
+    ['email' => 'admin@gmail.com'],
+    [
+        'name' => 'Administrador',
+        'password' => Hash::make('admin123'),
+        'user_type' => 'admin',
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]
+);
     }
 }
