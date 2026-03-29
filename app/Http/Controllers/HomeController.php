@@ -19,8 +19,11 @@ class HomeController extends Controller
         $q = $request->input('search');
         $qLower = $q ? mb_strtolower($q) : null;
         $totalLibros = Libro::count();
-        $totalPrestamos = Prestamo::where('estado', 'entregado')->count();
-        $totalPrestamosPendiendiete = Prestamo::where('estado', 'pendiente')->count();
+        $prestamosStats = Prestamo::selectRaw("SUM(CASE WHEN estado = 'entregado' THEN 1 ELSE 0 END) as entregados")
+            ->selectRaw("SUM(CASE WHEN estado = 'pendiente' THEN 1 ELSE 0 END) as pendientes")
+            ->first();
+        $totalPrestamos = (int) ($prestamosStats->entregados ?? 0);
+        $totalPrestamosPendiendiete = (int) ($prestamosStats->pendientes ?? 0);
         $totalUsuarios = User::count();
         // Obtener el total de libros para mostrar en la vista
 
@@ -38,7 +41,7 @@ class HomeController extends Controller
             })
             ->orderBy('created_at', 'desc');
 
-            $paginated = $librosQuery->paginate(5)->withQueryString();
+            $paginated = $librosQuery->simplePaginate(5)->withQueryString();
 
          if ($request->wantsJson() || $request->ajax()) {
             $items = collect($paginated->items())->map(function ($l) {
