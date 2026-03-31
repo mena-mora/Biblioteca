@@ -99,14 +99,13 @@
               </a>
             </li>
             <li>
-            <li>
               <a href="{{ route('libros.index') }}"
                 class="flex items-center p-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 rounded-xl transition-all font-medium hover-lift">
                 <i class="fas fa-book w-6 mr-3"></i> Libros
               </a>
             </li>
             <li>
-              <a href="#prestamos"
+              <a href="{{ route('prestamos.index') }}"
                 class="flex items-center p-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 rounded-xl transition-all font-medium hover-lift">
                 <i class="fas fa-exchange-alt w-6 mr-3"></i> Préstamos
               </a>

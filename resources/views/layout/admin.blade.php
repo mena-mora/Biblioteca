@@ -49,7 +49,8 @@
               </a>
             </li>
             <li>
-              <a href="{{ route('prestamos.index') }}" class="text-gray-700 font-medium hover:text-cyan-600 transition-all">
+              <a href="{{ route('usuarios.profile') }}" class="text-gray-700 font-medium hover:text-cyan-600 transition-all">
+
                 <i class="fas fa-exchange-alt mr-2"></i>Perfil
               </a>
             </li>
@@ -127,6 +128,12 @@
               <a href="{{ route('prestamos.index') }}"
                 class="flex items-center p-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 rounded-xl transition-all font-medium hover-lift">
                 <i class="fas fa-exchange-alt w-6 mr-3"></i> Préstamos
+              </a>
+            </li>
+            <li>
+              <a href="{{ route('usuarios.profile') }}"
+                class="flex items-center p-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 rounded-xl transition-all font-medium hover-lift">
+                <i class="fas fa-exchange-alt w-6 mr-3"></i> Perfil
               </a>
             </li>
             
