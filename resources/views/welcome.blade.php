@@ -28,7 +28,7 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Logo de la Biblioteca" class="h-full w-full object-contain">
               </div>
               <div class="leading-tight">
-                <p class="font-semibold text-slate-700">Biblioteca</p>
+                <p class="font-semibold text-slate-700">Rkives</p>
                 <p class="text-xs text-slate-500 -mt-0.5">Lee • Reserva • Aprende</p>
               </div>
             </a>

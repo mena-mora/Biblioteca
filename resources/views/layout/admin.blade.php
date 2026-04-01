@@ -24,7 +24,7 @@
 
           <div>
             <h1 class="text-xl font-bold text-cyan-800">
-              Admin <span class="text-cyan-500">Biblioteca</span>
+              Rkives
             </h1>
             <p class="text-xs text-gray-500">Panel de control</p>
           </div>
@@ -51,7 +51,7 @@
             <li>
               <a href="{{ route('usuarios.profile') }}" class="text-gray-700 font-medium hover:text-cyan-600 transition-all">
 
-                <i class="fas fa-exchange-alt mr-2"></i>Perfil
+                <i class="fas fa-solid fa-user mr-2"></i>Perfil
               </a>
             </li>
 
@@ -133,7 +133,7 @@
             <li>
               <a href="{{ route('usuarios.profile') }}"
                 class="flex items-center p-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 rounded-xl transition-all font-medium hover-lift">
-                <i class="fas fa-exchange-alt w-6 mr-3"></i> Perfil
+                <i class="fas fa-solid fa-user w-6 mr-3"></i> Perfil
               </a>
             </li>
             
