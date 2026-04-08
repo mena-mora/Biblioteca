@@ -7,12 +7,10 @@
                 <p class="inline-flex items-center rounded-full border border-cyan-200 bg-cyan-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700">
                     Nuevo prestamo
                 </p>
-                <h1 class="mt-4 text-3xl font-black leading-tight text-slate-800 md:text-4xl">
-                    Conecta a la persona correcta con su proximo libro.
+                <h1 class="mt-4 text-lg font-black leading-tight text-slate-800">
+                    Busca por ID o nombre del usuario.
+                    
                 </h1>
-                <p class="mt-3 max-w-2xl text-sm text-slate-600 md:text-base">
-                    Busca por ID o nombre del usuario y abre el flujo para seleccionar el libro en segundos.
-                </p>
 
                 <form action="{{ route('prestamos.buscar_usuario') }}" method="POST" class="mt-7 space-y-5">
                     @csrf
@@ -22,12 +20,7 @@
                             <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 transition group-focus-within:text-cyan-600">
                                 <i class="fas fa-id-card"></i>
                             </span>
-                            <input
-                                type="text"
-                                name="usuario_id"
-                                id="usuario_id"
-                                class="w-full rounded-xl border border-slate-300 bg-white py-3 pl-10 pr-4 text-slate-800 placeholder-slate-400 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-300"
-                                placeholder="Ej: 102"
+                            <input type="text" name="usuario_id" id="usuario_id" class="w-full rounded-xl border border-slate-300 bg-white py-3 pl-10 pr-4 text-slate-800 placeholder-slate-400 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-300" placeholder="Ej: 102"
                                 value="{{ old('usuario_id') }}"
                             >
                         </div>
@@ -39,13 +32,7 @@
                             <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 transition group-focus-within:text-cyan-600">
                                 <i class="fas fa-user"></i>
                             </span>
-                            <input
-                                type="text"
-                                name="usuario_nombre"
-                                id="usuario_nombre"
-                                class="w-full rounded-xl border border-slate-300 bg-white py-3 pl-10 pr-4 text-slate-800 placeholder-slate-400 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-300"
-                                placeholder="Ej: Ana Martinez"
-                                value="{{ old('usuario_nombre') }}"
+                            <input type="text" name="usuario_nombre" id="usuario_nombre" class="w-full rounded-xl border border-slate-300 bg-white py-3 pl-10 pr-4 text-slate-800 placeholder-slate-400 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-300" placeholder="Ej: Ana Martinez" value="{{ old('usuario_nombre') }}"
                             >
                         </div>
                     </div>
@@ -57,23 +44,7 @@
                 </form>
             </section>
 
-            <aside class="rounded-2xl border border-cyan-100/70 bg-cyan-50 p-6 text-slate-700 shadow-sm md:p-7">
-                <h2 class="text-lg font-bold text-slate-800">Flujo rapido</h2>
-                <ol class="mt-4 space-y-4 text-sm">
-                    <li class="flex gap-3">
-                        <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-cyan-700 font-bold text-white">1</span>
-                        <p>Identifica a la persona por ID o por nombre.</p>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-cyan-700 font-bold text-white">2</span>
-                        <p>Confirma visualmente sus datos antes de continuar.</p>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-cyan-700 font-bold text-white">3</span>
-                        <p>Avanza al selector de libro con un solo clic.</p>
-                    </li>
-                </ol>
-
+            <aside class="rounded-2xl border border-cyan-100/70 bg-cyan-50 p-6  text-slate-700 shadow-sm ">
                 @isset($usuario)
                     <div class="mt-7 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800">
                         <p class="flex items-center gap-2 font-bold uppercase tracking-wide text-emerald-700">
@@ -96,7 +67,7 @@
                         </form>
                     </div>
                 @else
-                    <div class="mt-7 rounded-xl border border-dashed border-slate-300 bg-white p-4 text-sm text-slate-600">
+                    <div class="rounded-xl border border-dashed border-slate-300 bg-white p-4 text-sm text-slate-600">
                         Cuando encuentres un usuario, aqui aparecera su tarjeta para continuar al selector de libro.
                     </div>
                 @endisset

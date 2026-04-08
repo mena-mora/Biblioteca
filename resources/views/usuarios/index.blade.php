@@ -1,7 +1,7 @@
 @extends('layout.admin')
 @section('title', 'Usuarios')
 @section('content')
-    <h1 class="text-2xl font-bold text-blue-800 mb-4">Usuarios</h1>
+    <h1 class="text-2xl font-bold text-blue-800">Usuarios</h1>
 
     @if(session('success'))
         <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
@@ -10,17 +10,24 @@
         </div>
     @endif
 
-    <section class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Resumen">
-              <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
-                <p class="text-xs text-slate-500 uppercase tracking-wider">Usuarios</p>
-                <p class="text-2xl font-bold mt-1">128</p>
-                <p class="text-sm text-emerald-700 mt-2">Cantidad total</p>
-              </article>
+    <section class=" grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 py-3" aria-label="Resumen">
+            <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Total de Usuarios</p>
+                <p class="text-2xl font-bold mt-1">{{ $totalUsuarios }}</p>
+            </article>  
+            <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Lectores</p>
+                <p class="text-2xl font-bold mt-1">{{ $totalLectores }}</p>
+            </article>
+            <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Administradores</p>
+                <p class="text-2xl font-bold mt-1">{{ $totalAdmins }}</p>
+            </article>
     </section>
 
     <a href="{{ route('usuarios.create') }}"
         class="bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all glow mb-4 inline-block">
-        <i class="fas fa-plus mr-2"></i>+ Agregar Usuario
+        <i class="fas fa-plus mr-2"></i>Agregar Usuario
     </a>
 
     <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">

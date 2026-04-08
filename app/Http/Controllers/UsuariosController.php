@@ -11,7 +11,10 @@ class UsuariosController extends Controller
     public function index()
     {
         $usuarios = User::all();
-        return view('usuarios.index', compact('usuarios'));
+        $totalUsuarios = User::count();
+        $totalLectores = User::where('user_type', 'lector')->count();
+        $totalAdmins = User::where('user_type', 'admin')->count();
+        return view('usuarios.index', compact('usuarios', 'totalUsuarios', 'totalLectores', 'totalAdmins'));
     }
 
     public function create()

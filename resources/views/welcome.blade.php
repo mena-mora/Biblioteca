@@ -25,11 +25,22 @@
 
             <a href="#inicio" class="flex items-center gap-2">
               <div class="h-30 w-30 rounded-2xl  grid place-items-center text-white ">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo de la Biblioteca" class="h-full w-full object-contain">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Book-Close-Bookmark-1--Streamline-Ultimate" height="36" width="36">
+                    <desc>
+                      Book Close Bookmark 1 Streamline Icon: https://streamlinehq.com
+                    </desc>
+                  <path fill="#ffffff" d="M19.174 1.95652v2.86956H5.78267c-0.50737 0 -0.99396 -0.20154 -1.35272 -0.56032 -0.35876 -0.35876 -0.56032 -0.84535 -0.56032 -1.35272 0 -0.50737 0.20156 -0.99396 0.56032 -1.35272C4.78871 1.20155 5.2753 1 5.78267 1H18.2175c0.2536 0 0.497 0.10078 0.6763 0.28016 0.1794 0.17938 0.2802 0.42267 0.2802 0.67636Z" stroke-width="1"></path>
+                  <path fill="#41a8b7" d="M20.1305 5.78262V22.0435c0 0.2536 -0.1008 0.497 -0.2802 0.6763 -0.1793 0.1794 -0.4227 0.2802 -0.6763 0.2802H5.78267c-0.50737 0 -0.99396 -0.2015 -1.35272 -0.5603 -0.35876 -0.3588 -0.56032 -0.8454 -0.56032 -1.3527V2.91306c0 0.50736 0.20156 0.99395 0.56032 1.35272 0.35876 0.35877 0.84535 0.56032 1.35272 0.56032H19.174c0.2536 0 0.497 0.10078 0.6763 0.28015 0.1794 0.17939 0.2802 0.42268 0.2802 0.67637Z" stroke-width="1"></path>
+                  <path fill="#6abad2" d="M7.14189 21.087V4.8261H5.78267c-0.50737 0 -0.99396 -0.20155 -1.35272 -0.56032 -0.35876 -0.35877 -0.56032 -0.84536 -0.56032 -1.35272V21.087c0 0.5073 0.20156 0.9939 0.56032 1.3527 0.35876 0.3588 0.84535 0.5603 1.35272 0.5603h3.27226c-0.50737 0 -0.99396 -0.2015 -1.35272 -0.5603 -0.35877 -0.3588 -0.56032 -0.8454 -0.56032 -1.3527Z" stroke-width="1"></path>
+                  <path fill="#ff808c" d="m17.2611 15.3478 -2.8696 -2.8695 -2.8695 2.8695V4.34783c0 -0.25369 0.1008 -0.49698 0.2801 -0.67636 0.1794 -0.17938 0.4227 -0.28016 0.6764 -0.28016h3.8261c0.2536 0 0.497 0.10078 0.6763 0.28016 0.1795 0.17938 0.2802 0.42267 0.2802 0.67636V15.3478Z" stroke-width="1"></path>
+                  <path fill="#ffbfc5" d="M16.3046 3.39131h-3.8261c-0.2537 0 -0.497 0.10078 -0.6764 0.28016 -0.1793 0.17938 -0.2801 0.42267 -0.2801 0.67636v2.49748c0 -0.25369 0.1008 -0.49698 0.2801 -0.67637 0.1794 -0.17937 0.4227 -0.28015 0.6764 -0.28015h3.8261c0.2536 0 0.497 0.10078 0.6763 0.28015 0.1795 0.17939 0.2802 0.42268 0.2802 0.67637V4.34783c0 -0.25369 -0.1007 -0.49698 -0.2802 -0.67636 -0.1793 -0.17938 -0.4227 -0.28016 -0.6763 -0.28016Z" stroke-width="1"></path>
+                  <path stroke="#191919" stroke-linecap="round" stroke-linejoin="round" d="m17.2611 15.3478 -2.8696 -2.8695 -2.8695 2.8695V4.34783c0 -0.25369 0.1008 -0.49698 0.2801 -0.67636 0.1794 -0.17938 0.4227 -0.28016 0.6764 -0.28016h3.8261c0.2536 0 0.497 0.10078 0.6763 0.28016 0.1795 0.17938 0.2802 0.42267 0.2802 0.67636V15.3478Z" stroke-width="1"></path>
+                  <path stroke="#191919" stroke-linecap="round" stroke-linejoin="round" d="M17.2609 4.8261h1.9131c0.2536 0 0.497 0.10078 0.6763 0.28015 0.1794 0.17939 0.2802 0.42268 0.2802 0.67637V22.0435c0 0.2536 -0.1008 0.497 -0.2802 0.6763 -0.1793 0.1794 -0.4227 0.2802 -0.6763 0.2802H5.78267c-0.50737 0 -0.99396 -0.2015 -1.35272 -0.5603 -0.35876 -0.3588 -0.56032 -0.8454 -0.56032 -1.3527V2.91306" stroke-width="1"></path>
+                  <path stroke="#191919" stroke-linecap="round" stroke-linejoin="round" d="M19.174 4.82608V1.95652c0 -0.25369 -0.1008 -0.49698 -0.2802 -0.67636C18.7145 1.10078 18.4711 1 18.2175 1H5.78267c-0.50737 0 -0.99396 0.20155 -1.35272 0.56032 -0.35876 0.35876 -0.56032 0.84535 -0.56032 1.35272 0 0.50737 0.20156 0.99396 0.56032 1.35272 0.35876 0.35878 0.84535 0.56032 1.35272 0.56032H9.1305" stroke-width="1"></path>
+                </svg>
               </div>
               <div class="leading-tight">
-                <p class="font-semibold text-slate-700">Rkives</p>
-                <p class="text-xs text-slate-500 -mt-0.5">Lee • Reserva • Aprende</p>
+                <p class="font-bold text-2xl text-cyan-800">Rkives</p>
               </div>
             </a>
           </div>
@@ -68,16 +79,16 @@
         <!-- Background image (stock libre) -->
         <div class="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=2400&q=70"
-            alt="Biblioteca con estantes y libros"
+            src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=2400&q=80"
+            alt="Interior de biblioteca"
             class="h-full w-full object-cover"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-linear-to-b from-slate-950/75 via-slate-950/55 to-slate-950/75"></div>
 
           <!-- Decorative blobs -->
-          <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-cyan-500/25 blur-3xl"></div>
-          <div class="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl"></div>
+          <div class="absolute -top-24 -right-24 h-76 w-76 rounded-full bg-teal-500/25 blur-3xl"></div>
+          <div class="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-teal-700/25 blur-3xl"></div>
         </div>
 
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
@@ -86,7 +97,7 @@
             <div class="lg:col-span-7 text-white">
               <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold tracking-wide border border-white/15">
                 <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                Plataforma de Biblioteca
+                SISTEMA DE GESTIÓN DE BIBLIOTECA
               </p>
 
               <h1 class="mt-5 text-3xl sm:text-5xl font-extrabold leading-tight">
