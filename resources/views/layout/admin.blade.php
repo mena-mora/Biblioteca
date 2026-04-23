@@ -76,9 +76,11 @@
                   class="bg-cyan-700 hover:bg-cyan-800 text-white px-5 py-2 rounded-lg font-medium transition-all glow">
                   <i class="fas fa-sign-out-alt mr-2"></i>Salir
                 </button>
+                
               </form>
             </li>
           </ul>
+          
         </nav>
 
         <!-- Usuario -->
@@ -86,7 +88,11 @@
           <div class="w-9 h-9 rounded-full bg-cyan-100 flex items-center justify-center">
             <i class="fas fa-user text-cyan-700"></i>
           </div>
-          <span class="font-medium text-cyan-900">Administrador</span>
+          <div class="leading-tight">
+            <span class="font-medium text-cyan-900">{{ auth()->user()?->name ?? 'Usuario' }}</span>
+            <p class="text-xs text-gray-500">{{ auth()->user()?->email ?? 'Sin email' }}</p>
+            <p class="text-xs text-gray-500">{{ auth()->user()?->user_type === 'admin' ? 'Administrador' : 'Usuario' }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -105,8 +111,9 @@
               <i class="fas fa-user-shield text-cyan-700"></i>
             </div>
             <div>
-              <p class="font-bold text-cyan-900 leading-tight">Administrador</p>
-              <p class="text-xs text-gray-500">Gestión del sistema</p>
+              <p class="font-bold text-cyan-900 leading-tight">{{ auth()->user()?->name ?? 'Usuario' }}</p>
+              <p class="text-xs text-gray-500">{{ auth()->user()?->email ?? 'Sin email' }}</p>
+              <p class="text-xs text-gray-500">{{ auth()->user()?->user_type === 'admin' ? 'Administrador' : 'Gestión del sistema' }}</p>
             </div>
           </div>
         </div>
@@ -176,6 +183,8 @@
       </main>
     </div>
   </div>
+
+  @include('partials.auth.footer')
     
     @vite('resources/js/app.js')
     @stack('scripts')

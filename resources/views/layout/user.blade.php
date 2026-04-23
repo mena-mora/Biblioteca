@@ -154,6 +154,8 @@
       </main>
     </div>
   </div>
+
+  @include('partials.auth.footer')
     
     @vite('resources/js/app.js')
     @stack('scripts')

@@ -23,15 +23,17 @@
             </section>
 
             <!-- Tarjetas resumen -->
-            <section class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Resumen">
+            <section class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 border border-cyan-500 relative overflow-hidden rounded-3xl bg-linear-to-r from-cyan-700 to-cyan-500 p-4" aria-label="Resumen">
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
                 <p class="text-xs text-slate-500 uppercase tracking-wider">Usuarios</p>
-                <p class="text-2xl font-bold mt-1">{{$totalUsuarios}}</p>
+                <p class="text-2xl font-bold mt-1">{{$totalUsuarios}} <span class="text-sm text-emerald-600 mt-2 font-normal ">usuarios totales</span>
+                <x  x /p>
               </article>
 
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
                 <p class="text-xs text-slate-500 uppercase tracking-wider">Libros</p>
-                <p class="text-2xl font-bold mt-1">{{$totalLibros}}</p>
+                <p class="text-2xl font-bold mt-1">{{$totalLibros}} <span class="text-sm text-emerald-600 mt-2 font-normal ">libros totales</span>
+                </p>
               </article>
 
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
@@ -41,8 +43,7 @@
 
               <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
                 <p class="text-xs text-slate-500 uppercase tracking-wider">Préstamos pendientes</p>
-                <p class="text-2xl font-bold mt-1">{{$totalPrestamosPendiendiete}}</p>
-                <p class="text-sm text-rose-700 mt-2">Requiere atención</p>
+                <p class="text-2xl font-bold mt-1">{{$totalPrestamosPendiendiete}} <span class="text-sm text-rose-700 mt-2 font-normal ">Requiere atención</span> </p>              
               </article>
             </section>
 
@@ -187,8 +188,6 @@
       </div>
     </div>
 
- 
-@include('partials.auth.footer')
         <script>
           document.addEventListener('DOMContentLoaded', function () {
             const input = document.getElementById('search');
@@ -254,5 +253,5 @@
             });
           });
         </script>
-      @endsection
+@endsection
 

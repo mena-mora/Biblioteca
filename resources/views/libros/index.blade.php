@@ -181,5 +181,4 @@
             });
         });
     </script>
-@include('partials.auth.footer')
 @endsection

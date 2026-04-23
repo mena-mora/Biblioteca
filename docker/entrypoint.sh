@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Iniciar PHP-FPM en background
 php-fpm &
 
@@ -8,13 +7,11 @@ sleep 3
 
 # Generar key si no existe
 #php artisan key:generate --force
-
 # Migraciones (opcional)
 php artisan migrate --force
 
 # Seeders (usuario admin)
 php artisan db:seed --force
-
 
 # Cachear config
 php artisan config:clear

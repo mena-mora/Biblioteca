@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('content')
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto">
         <h1 class="text-2xl font-bold text-blue-800 mb-4">Prestamos</h1>
 
     @if(session('success'))
